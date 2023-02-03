@@ -19,7 +19,7 @@ const icons = {
 };
 
 export default function App() {
-  const [city, setCity] = useState("Loading...");
+  const [city, setCity] = useState([]);
   const [days, setDays] = useState([]);
   const [ok, setOk] = useState(true);
   const getWeather = async () => {
@@ -46,67 +46,73 @@ export default function App() {
   }, []);
 
   return (
+    
     <View style={styles.container}>
+      {days.length === 0 ? (
+        <View style={{marginBottom:2000}}>
+          <View style={styles.loading}>
+            <Image style={{marginTop:140, width:400,height:400,alignSelf:"center"}} source={require('./assets/wsiwt.png')}/>
+            <Text style={{width:400,marginTop:105,textAlign:'center', alignSelf:'center',fontSize:12, color:"#35545C"}}>오늘의 날씨에 어떤 옷을 입어야할지 모르겠다면?</Text>
+            <Text style={{fontWeight:'bold',marginTop:10, width:400, textAlign:'center', alignSelf:'center', fontSize:13, color:"#35545C"}}>
+              WSIWT는 날씨와 기온의 따라 룩을 소개시켜드립니다!
+            </Text>
+            <View style={{width:200, height:55, marginTop:30,backgroundColor:"#35545C",alignSelf:"center",alignItems:'center',justifyContent:"center",borderRadius:10}}>
+              <Text style={{fontWeight:'bold',color:"white"}}>Feeling The Weather...</Text>
+            </View>
+            <StatusBar style="auto" /> 
+          </View>
+        </View>
+      ) : (days.map((day, index) => (
       <ImageBackground source={require("./assets/wave.png")} style={styles.bgImage}>
-      <StatusBar style="dark" />
-      <View style={{flexDirection: "row"}}>
-        <Image style={styles.logo} source={require("./assets/logo.png")}></Image>
-        <Image style={{marginTop:0,height:70,width:70,marginTop:28,}} source={require("./assets/name.png")}></Image>
-      </View>
-      <View style={styles.city}>
-        <Text style={styles.cityName}>{city}</Text>
-      </View>
-      <ScrollView
+        <StatusBar style="dark" />
+        <View style={{flexDirection: "row"}}>
+          <Image style={styles.logo} source={require("./assets/logo.png")}></Image>
+          <Image style={{marginTop:0,height:70,width:70,marginTop:28,}} source={require("./assets/name.png")}></Image>
+        </View>
+        <ScrollView
         pagingEnabled
         horizontal
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={styles.weather}
-      >
-        {days.length === 0 ? (
-          <View style={{ ...styles.day, alignItems: "center" }}>
-          <ActivityIndicator
-            color="white"
-            style={{ marginTop: 10 }}
-            size="large"
-          />
-        </View>
-      ) : (
-        days.map((day, index) => (
+        >
+    
           <View key={index} style={styles.day}>
-            <View style={{
-              alignItems: "center",
-              width: "100%",
-            }}>
-            </View>
-            <View style={{justifyContent: "center", alignItems: "center",}}>
-            <Text>{new Date(day.dt * 1000).toString().substring(0, 10)}</Text>
-              <Fontisto name={icons[day.weather[0].main]} size={200} color="black"/>
-              <Text style={styles.description}>{day.weather[0].main}</Text>
-              <Text style={styles.tinyText}>{day.weather[0].description}</Text>
-  
-            </View>
-            <View style={{flexDirection: "row",justifyContent: "space-around",marginTop:90}}>
-              <View style={{borderRadius:40, alignItems:"center",justifyContent:"center",backgroundColor:"white",marginHorizontal:10, width:70, height:190}}>
-              <Image style={{alingself:"center",width:50,height:50}} source={require("./assets/day.png")}/>
-              <Text style={{fontWeight: 'bold',color:"black",fontSize:11}}>{day.temp.day}</Text>
-              </View>
-              <View style={{borderRadius:70, alignItems:"center",justifyContent:"center",backgroundColor:"white",marginHorizontal:10, width:70, height:190}}>
-              <Image style={{alingself:"center",width:50,height:50}} source={require("./assets/night.png")}/>
-              <Text style={{fontWeight: 'bold',color:"black",fontSize:11}}>{day.temp.night}</Text>
-              </View><View style={{borderRadius:70, alignItems:"center",justifyContent:"center",backgroundColor:"white",marginHorizontal:10, width:70, height:190}}>
-              <Image style={{alingself:"center",width:50,height:50}} source={require("./assets/min.png")}/>
-              <Text style={{fontWeight: 'bold',color:"black",fontSize:11}}>{day.temp.min}</Text>
-              </View><View style={{borderRadius:70, alignItems:"center",justifyContent:"center",backgroundColor:"white",marginHorizontal:10, width:70, height:190}}>
-              <Image style={{alingself:"center",width:50,height:50}} source={require("./assets/max.png")}/>
-              <Text style={{fontWeight: 'bold',color:"black",fontSize:11}}>{day.temp.max}</Text>
-              </View>
-            </View> 
+            <View style={{alignItems: "center", width: "100%",}}>
           </View>
-            
-          ))
-        )}
+          <View style={{justifyContent: "center", alignItems: "center",}}>
+            <View style={styles.city}>
+              <Text style={styles.cityName}>{city}</Text>
+            </View>
+            <Text>{new Date(day.dt * 1000).toString().substring(0, 10)}</Text>
+            <Fontisto name={icons[day.weather[0].main]} size={200} color="black"/>
+            <Text style={styles.description}>{day.weather[0].main}</Text>
+            <Text style={styles.tinyText}>{day.weather[0].description}</Text>
+          </View>
+          <View style={{flexDirection: "row",justifyContent: "space-around",marginTop:90}}>
+            <View style={{borderRadius:40, alignItems:"center",justifyContent:"center",backgroundColor:"white",marginHorizontal:10, width:70, height:190}}>
+            <Image style={{alingself:"center",width:50,height:50}} source={require("./assets/day.png")}/>
+            <Text style={{fontWeight: 'bold',color:"black",fontSize:11}}>{day.temp.day}</Text>
+          </View>
+            <View style={{borderRadius:70, alignItems:"center",justifyContent:"center",backgroundColor:"white",marginHorizontal:10, width:70, height:190}}>
+            <Image style={{alingself:"center",width:50,height:50}} source={require("./assets/night.png")}/>
+            <Text style={{fontWeight: 'bold',color:"black",fontSize:11}}>{day.temp.night}</Text>
+          </View><View style={{borderRadius:70, alignItems:"center",justifyContent:"center",backgroundColor:"white",marginHorizontal:10, width:70, height:190}}>
+            <Image style={{alingself:"center",width:50,height:50}} source={require("./assets/min.png")}/>
+            <Text style={{fontWeight: 'bold',color:"black",fontSize:11}}>{day.temp.min}</Text>
+          </View>
+            <View style={{borderRadius:70, alignItems:"center",justifyContent:"center",backgroundColor:"white",marginHorizontal:10, width:70, height:190}}>
+            <Image style={{alingself:"center",width:50,height:50}} source={require("./assets/max.png")}/>
+            <Text style={{fontWeight: 'bold',color:"black",fontSize:11}}>{day.temp.max}</Text>
+          </View>
+        </View> 
+      </View>          
+      <View style={styles.recommend}>
+        <Text>날씨에 따라서 옷을 추천해드립니다!</Text>
+      </View>
       </ScrollView>
       </ImageBackground>
+      ))
+      )}
     </View>
   );
 }
@@ -116,15 +122,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#F3F3FA",
   },
   city: {
-    marginTop:30,
+    marginTop:60,
     marginBottom:30,
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
   },
   cityName: {
     fontSize: 30,
-    fontWeight: "500",
+    fontWeight: 'bold',
     color: "black",
   },
   weather: {},
@@ -154,13 +157,23 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
   },
-    bgImage: {width: '100%', height: '100%'},
-    logo:{
-      width:55,
-      height:55,
-      alignItems:"baseline",
-      marginTop:35,
-      marginLeft:10
+  bgImage: {width: '100%', height: '100%'},
+  logo:{
+    width:55,
+    height:55,
+    alignItems:"baseline",
+    marginTop:35,
+    marginLeft:10
+  },
+  loading: {
+    flex: 1,
+  },
+  text :{
+    color: "#2c2d2c",
+    fontSize: 30
+  },
+  recommend:{
+    flex:1,
 
-    }
+  }
 });
