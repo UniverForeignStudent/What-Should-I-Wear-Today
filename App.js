@@ -83,12 +83,12 @@ export default function App() {
             <View style={styles.city}>
               <Text style={styles.cityName}>{city}</Text>
             </View>
-            <Text>{new Date(day.dt * 1000).toString().substring(0, 10)}</Text>
+            <Text style={{fontWeight:'bold',paddingBottom:25}}>{new Date(day.dt * 1000).toString().substring(0, 10)}</Text>
             <Fontisto name={icons[day.weather[0].main]} size={200} color="black"/>
             <Text style={styles.description}>{day.weather[0].main}</Text>
             <Text style={styles.tinyText}>{day.weather[0].description}</Text>
           </View>
-          <View style={{flexDirection: "row",justifyContent: "space-around",marginTop:90}}>
+          <View style={{flexDirection: "row",justifyContent: "space-around",marginTop:70}}>
             <View style={{borderRadius:40, alignItems:"center",justifyContent:"center",backgroundColor:"white",marginHorizontal:10, width:70, height:190}}>
             <Image style={{alingself:"center",width:50,height:50}} source={require("./assets/day.png")}/>
             <Text style={{fontWeight: 'bold',color:"black",fontSize:11}}>{day.temp.day}</Text>
@@ -107,7 +107,7 @@ export default function App() {
         </View> 
       </View>          
       <View style={styles.recommend}>
-        <Text>날씨에 따라서 옷을 추천해드립니다!</Text>
+        <Text style={{alignItems:"center",justifyContent:"center"}}>날씨에 따라서 옷을 추천해드립니다!</Text>
       </View>
       </ScrollView>
       </ImageBackground>
