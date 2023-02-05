@@ -3,7 +3,6 @@ import { StatusBar } from "expo-status-bar";
 import React, { useEffect, useState } from "react";
 import {View,Text,Dimensions,ActivityIndicator,StyleSheet,ImageBackground,ScrollView,Image} from "react-native";
 import { Fontisto } from "@expo/vector-icons";
-import Loading from "./Loading";
 const { width: SCREEN_WIDTH } = Dimensions.get("window");
 
 const API_KEY = "784ab24ff2ed5d94d4288abed9e25d13";
@@ -107,8 +106,12 @@ export default function App() {
         </View> 
       </View>          
       <View style={styles.recommend}>
-        <Text style={{alignItems:"center",justifyContent:"center"}}>날씨에 따라서 옷을 추천해드립니다!</Text>
+        <Text style={{textAlign:'center', alignSelf:'center',alignItems:"center",justifyContent:"center",fontSize:20}}>날씨에 따라서 옷을 추천해드립니다!</Text>
       </View>
+      <View style={styles.outer}><Image style={{alingself:"center",width:50,height:50}} source={require("./assets/fashion/coat.png")} /></View>
+      <View style={styles.shirt}><Image style={{alingself:"center",width:50,height:50}} source={require("./assets/fashion/hood.png")} /></View>
+      <View style={styles.pants}><Image style={{alingself:"center",width:50,height:50}} source={require("./assets/fashion/denim-pants.png")} /></View>
+      <View style={styles.shoes}><Image style={{alingself:"center",width:50,height:50}} source={require("./assets/fashion/padded-jacket.png")} /></View>
       </ScrollView>
       </ImageBackground>
       ))
@@ -173,7 +176,17 @@ const styles = StyleSheet.create({
     fontSize: 30
   },
   recommend:{
-    flex:1,
+  },
+  outer:{
+
+  },
+  shirt:{
+
+  },
+  pants:{
+
+  },
+  shoes:{
 
   }
 });
