@@ -72,50 +72,51 @@ export default function App() {
         pagingEnabled
         horizontal
         showsHorizontalScrollIndicator={false}
-        contentContainerStyle={styles.weather}
         >
     
-          <View key={index} style={styles.day}>
-            <View style={{alignItems: "center", width: "100%",}}>
+        <View key={index} style={styles.day}>
+          <View style={{alignItems: "center", width: "100%",}}>
+        </View>
+        <View style={{justifyContent: "center", alignItems: "center",}}>
+          <View style={styles.city}>
+            <Text style={styles.cityName}>{city}</Text>
           </View>
-          <View style={{justifyContent: "center", alignItems: "center",}}>
-            <View style={styles.city}>
-              <Text style={styles.cityName}>{city}</Text>
-            </View>
-            <Text style={{fontWeight:'bold',paddingBottom:25}}>{new Date(day.dt * 1000).toString().substring(0, 10)}</Text>
-            <Fontisto name={icons[day.weather[0].main]} size={200} color="black"/>
-            <Text style={styles.description}>{day.weather[0].main}</Text>
-            <Text style={styles.tinyText}>{day.weather[0].description}</Text>
-          </View>
-          <View style={{flexDirection: "row",justifyContent: "space-around",marginTop:70}}>
-            <View style={{borderRadius:40, alignItems:"center",justifyContent:"center",backgroundColor:"white",marginHorizontal:10, width:70, height:190}}>
+          <Text style={{fontWeight:'bold',paddingBottom:25}}>{new Date(day.dt * 1000).toString().substring(0, 10)}</Text>
+          <Fontisto name={icons[day.weather[0].main]} size={200} color="black"/>
+          <Text style={styles.description}>{day.weather[0].main}</Text>
+          <Text style={styles.tinyText}>{day.weather[0].description}</Text>
+        </View>
+        <View style={{flexDirection: "row",justifyContent: "space-around",marginTop:70}}>
+          <View style={{borderRadius:40, alignItems:"center",justifyContent:"center",backgroundColor:"white",marginHorizontal:10, width:70, height:190}}>
             <Image style={{alingself:"center",width:50,height:50}} source={require("./assets/day.png")}/>
             <Text style={{fontWeight: 'bold',color:"black",fontSize:11}}>{day.temp.day}</Text>
           </View>
-            <View style={{borderRadius:70, alignItems:"center",justifyContent:"center",backgroundColor:"white",marginHorizontal:10, width:70, height:190}}>
+          <View style={{borderRadius:70, alignItems:"center",justifyContent:"center",backgroundColor:"white",marginHorizontal:10, width:70, height:190}}>
             <Image style={{alingself:"center",width:50,height:50}} source={require("./assets/night.png")}/>
             <Text style={{fontWeight: 'bold',color:"black",fontSize:11}}>{day.temp.night}</Text>
-          </View><View style={{borderRadius:70, alignItems:"center",justifyContent:"center",backgroundColor:"white",marginHorizontal:10, width:70, height:190}}>
+          </View>
+          <View style={{borderRadius:70, alignItems:"center",justifyContent:"center",backgroundColor:"white",marginHorizontal:10, width:70, height:190}}>
             <Image style={{alingself:"center",width:50,height:50}} source={require("./assets/min.png")}/>
             <Text style={{fontWeight: 'bold',color:"black",fontSize:11}}>{day.temp.min}</Text>
           </View>
-            <View style={{borderRadius:70, alignItems:"center",justifyContent:"center",backgroundColor:"white",marginHorizontal:10, width:70, height:190}}>
+          <View style={{borderRadius:70, alignItems:"center",justifyContent:"center",backgroundColor:"white",marginHorizontal:10, width:70, height:190}}>
             <Image style={{alingself:"center",width:50,height:50}} source={require("./assets/max.png")}/>
             <Text style={{fontWeight: 'bold',color:"black",fontSize:11}}>{day.temp.max}</Text>
           </View>
         </View> 
-      </View>          
-      <View style={styles.recommend}>
-        <Text style={{textAlign:'center', alignSelf:'center',alignItems:"center",justifyContent:"center",fontSize:20}}>날씨에 따라서 옷을 추천해드립니다!</Text>
+      </View>         
+      <View style={{}}>
+        <Text style={{fontSize:20}}>오늘의 날씨에 어울리는 옷은 이거에요!</Text>
+        <View style={styles.outer}><Image style={{alingself:"center",width:130,height:130}} source={require("./assets/fashion/coat.png")} /></View>
+        <View style={styles.shirt}><Image style={{alingself:"center",width:130,height:130}} source={require("./assets/fashion/hood.png")} /></View>
+        <View style={styles.pants}><Image style={{alingself:"center",width:130,height:130}} source={require("./assets/fashion/denim-pants.png")} /></View>
+        <View style={styles.shoes}><Image style={{alingself:"center",width:130,height:130}} source={require("./assets/fashion/padded-jacket.png")} /></View>
       </View>
-      <View style={styles.outer}><Image style={{alingself:"center",width:50,height:50}} source={require("./assets/fashion/coat.png")} /></View>
-      <View style={styles.shirt}><Image style={{alingself:"center",width:50,height:50}} source={require("./assets/fashion/hood.png")} /></View>
-      <View style={styles.pants}><Image style={{alingself:"center",width:50,height:50}} source={require("./assets/fashion/denim-pants.png")} /></View>
-      <View style={styles.shoes}><Image style={{alingself:"center",width:50,height:50}} source={require("./assets/fashion/padded-jacket.png")} /></View>
+      <View style={{}}>
+      </View>
       </ScrollView>
-      </ImageBackground>
-      ))
-      )}
+    </ImageBackground>
+      )))}
     </View>
   );
 }
@@ -133,7 +134,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: "black",
   },
-  weather: {},
   day: {
     width: SCREEN_WIDTH,
     paddingHorizontal: 20,
