@@ -21,7 +21,6 @@ export default function App() {
   const [city, setCity] = useState([]);
   const [days, setDays] = useState([]);
   const [ok, setOk] = useState(true);
-  
   const getWeather = async () => {
     const { granted } = await Location.requestForegroundPermissionsAsync();
     if (!granted) {
@@ -108,6 +107,7 @@ export default function App() {
       </View>         
       <View style={{width: SCREEN_WIDTH}}>
         <View  style={{alignItems:"center"}}><Text style={{fontSize:20}}>오늘의 날씨에 어울리는 옷은 이거에요!{day.temp.day}</Text></View>
+
         {day.temp.day<=4 && (<View style={styles.outer}><Image style={{width:130,height:130}} source={require("./assets/fashion/padded-jacket.png")} /></View>)}
         {day.temp.day<=4 &&(<View style={styles.shirt}><Image style={{width:130,height:130}} source={require("./assets/fashion/hood.png")} /></View>)}
         {day.temp.day<=4 &&(<View style={styles.pants}><Image style={{width:130,height:130}} source={require("./assets/fashion/denim-pants.png")} /></View>)}
@@ -123,8 +123,8 @@ export default function App() {
         {8<day.temp.day<=11 && (<View style={styles.pants}><Image style={{width:130,height:130}} source={require("./assets/fashion/denim-pants.png")} /></View>) }
         {8<day.temp.day<=11 && (<View style={styles.shoes}><Image style={{width:130,height:130}} source={require("./assets/fashion/sneakers.png")} /></View>)}
 
-        {11<day.temp.day<=16 && (<View style={styles.outer}><Image style={{width:130,height:130}} source={require("./assets/fashion/varsity.png")} /></View>)}
-        {11<day.temp.day<=16 && (<View style={styles.shirt}><Image style={{width:130,height:130}} source={require("./assets/fashion/hood.png")} /></View>)}
+        {11<day.temp.day<=16 && (<View style={styles.outer}><Image style={{width:130,height:130}} source={require("./assets/fashion/cardigan.png")} /></View>)}
+        {11<day.temp.day<=16 && (<View style={styles.shirt}><Image style={{width:130,height:130}} source={require("./assets/fashion/Tshirt.png")} /></View>)}
         {11<day.temp.day<=16 && (<View style={styles.pants}><Image style={{width:130,height:130}} source={require("./assets/fashion/denim-pants.png")} /></View>)}
         {11<day.temp.day<=16 && (<View style={styles.shoes}><Image style={{width:130,height:130}} source={require("./assets/fashion/sneakers.png")} /></View>)}
 
@@ -139,15 +139,16 @@ export default function App() {
         {19<day.temp.day<=22 && (<View style={styles.shoes}><Image style={{width:130,height:130}} source={require("./assets/fashion/sneakers.png")} /></View>)}
 
         {22<day.temp.day<=27 && (<View style={styles.outer}><Image style={{width:130,height:130}} source={require("./assets/fashion/varsity.png")} /></View>)}
-        {22<day.temp.day<=27 && (<View style={styles.shirt}><Image style={{width:130,height:130}} source={require("./assets/fashion/hood.png")} /></View>)}
+        {22<day.temp.day<=27 && (<View style={styles.shirt}><Image style={{width:130,height:130}} source={require("./assets/fashion/Tshirt.png")} /></View>)}
         {22<day.temp.day<=27 && (<View style={styles.pants}><Image style={{width:130,height:130}} source={require("./assets/fashion/denim-pants.png")} /></View>)}
         {22<day.temp.day<=27 && (<View style={styles.shoes}><Image style={{width:130,height:130}} source={require("./assets/fashion/sneakers.png")} /></View>)}
 
         {27<day.temp.day && (<View style={styles.outer}><Image style={{width:130,height:130}} source={require("./assets/fashion/varsity.png")} /></View>)}
-        {27<day.temp.day && (<View style={styles.shirt}><Image style={{width:130,height:130}} source={require("./assets/fashion/hood.png")} /></View>)}
-        {27<day.temp.day && (<View style={styles.pants}><Image style={{width:130,height:130}} source={require("./assets/fashion/denim-pants.png")} /></View>)}
+        {27<day.temp.day && (<View style={styles.shirt}><Image style={{width:130,height:130}} source={require("./assets/fashion/Tshirt.png")} /></View>)}
+        {27<day.temp.day && (<View style={styles.pants}><Image style={{width:130,height:130}} source={require("./assets/fashion/shorts.png")} /></View>)}
         {27<day.temp.day && (<View style={styles.shoes}><Image style={{width:130,height:130}} source={require("./assets/fashion/sneakers.png")} /></View>)}
       </View>
+
       <View style={{}}>
       </View>
       </ScrollView>
