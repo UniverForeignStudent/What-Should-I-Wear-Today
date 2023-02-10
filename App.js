@@ -106,48 +106,57 @@ export default function App() {
         </View> 
       </View>         
       <View style={{width: SCREEN_WIDTH}}>
-        <View  style={{alignItems:"center"}}><Text style={{fontSize:20}}>오늘의 날씨에 어울리는 옷은 이거에요!{day.temp.day}</Text></View>
-
+        <View  style={{alignItems:"center"}}><Text style={{fontSize:20}}>오늘의 날씨에 어울리는 옷은 이거에요!</Text></View>
+        
+        <View style={{marginTop:20}}>
         {day.temp.day<=4 && (<View style={styles.outer}><Image style={{width:130,height:130}} source={require("./assets/fashion/padded-jacket.png")} /></View>)}
         {day.temp.day<=4 &&(<View style={styles.shirt}><Image style={{width:130,height:130}} source={require("./assets/fashion/hood.png")} /></View>)}
         {day.temp.day<=4 &&(<View style={styles.pants}><Image style={{width:130,height:130}} source={require("./assets/fashion/denim-pants.png")} /></View>)}
         {day.temp.day<=4 &&(<View style={styles.shoes}><Image style={{width:130,height:130}} source={require("./assets/fashion/sneakers.png")} /></View>)}
-        
-        {4<day.temp.day<=8 && (<View style={styles.outer}><Image style={{width:130,height:130}} source={require("./assets/fashion/coat.png")} /></View>)}
-        {4<day.temp.day<=8 && (<View style={styles.shirt}><Image style={{width:130,height:130}} source={require("./assets/fashion/hood.png")} /></View>)}
-        {4<day.temp.day<=8 && (<View style={styles.pants}><Image style={{width:130,height:130}} source={require("./assets/fashion/denim-pants.png")} /></View>)}
-        {4<day.temp.day<=8 && (<View style={styles.shoes}><Image style={{width:130,height:130}} source={require("./assets/fashion/sneakers.png")} /></View>)}
-
-        {8<day.temp.day<=11 && (<View style={styles.outer}><Image style={{width:130,height:130}} source={require("./assets/fashion/varsity.png")} /></View>)}
-        {8<day.temp.day<=11 && (<View style={styles.shirt}><Image style={{width:130,height:130}} source={require("./assets/fashion/hood.png")} /></View>)}
-        {8<day.temp.day<=11 && (<View style={styles.pants}><Image style={{width:130,height:130}} source={require("./assets/fashion/denim-pants.png")} /></View>) }
-        {8<day.temp.day<=11 && (<View style={styles.shoes}><Image style={{width:130,height:130}} source={require("./assets/fashion/sneakers.png")} /></View>)}
-
-        {11<day.temp.day<=16 && (<View style={styles.outer}><Image style={{width:130,height:130}} source={require("./assets/fashion/cardigan.png")} /></View>)}
-        {11<day.temp.day<=16 && (<View style={styles.shirt}><Image style={{width:130,height:130}} source={require("./assets/fashion/Tshirt.png")} /></View>)}
-        {11<day.temp.day<=16 && (<View style={styles.pants}><Image style={{width:130,height:130}} source={require("./assets/fashion/denim-pants.png")} /></View>)}
-        {11<day.temp.day<=16 && (<View style={styles.shoes}><Image style={{width:130,height:130}} source={require("./assets/fashion/sneakers.png")} /></View>)}
-
-        {16<day.temp.day<=19 && (<View style={styles.outer}><Image style={{width:130,height:130}} source={require("./assets/fashion/varsity.png")} /></View>)}
-        {16<day.temp.day<=19 && (<View style={styles.shirt}><Image style={{width:130,height:130}} source={require("./assets/fashion/hood.png")} /></View>)}
-        {16<day.temp.day<=19 && (<View style={styles.pants}><Image style={{width:130,height:130}} source={require("./assets/fashion/denim-pants.png")} /></View>)}
-        {16<day.temp.day<=19 && (<View style={styles.shoes}><Image style={{width:130,height:130}} source={require("./assets/fashion/sneakers.png")} /></View>)}
-
-        {19<day.temp.day<=22 && (<View style={styles.outer}><Image style={{width:130,height:130}} source={require("./assets/fashion/varsity.png")} /></View>)}
-        {19<day.temp.day<=22 && (<View style={styles.shirt}><Image style={{width:130,height:130}} source={require("./assets/fashion/hood.png")} /></View>)}
-        {19<day.temp.day<=22 && (<View style={styles.pants}><Image style={{width:130,height:130}} source={require("./assets/fashion/denim-pants.png")} /></View>)}
-        {19<day.temp.day<=22 && (<View style={styles.shoes}><Image style={{width:130,height:130}} source={require("./assets/fashion/sneakers.png")} /></View>)}
-
-        {22<day.temp.day<=27 && (<View style={styles.outer}><Image style={{width:130,height:130}} source={require("./assets/fashion/varsity.png")} /></View>)}
-        {22<day.temp.day<=27 && (<View style={styles.shirt}><Image style={{width:130,height:130}} source={require("./assets/fashion/Tshirt.png")} /></View>)}
-        {22<day.temp.day<=27 && (<View style={styles.pants}><Image style={{width:130,height:130}} source={require("./assets/fashion/denim-pants.png")} /></View>)}
-        {22<day.temp.day<=27 && (<View style={styles.shoes}><Image style={{width:130,height:130}} source={require("./assets/fashion/sneakers.png")} /></View>)}
-
-        {27<day.temp.day && (<View style={styles.outer}><Image style={{width:130,height:130}} source={require("./assets/fashion/varsity.png")} /></View>)}
-        {27<day.temp.day && (<View style={styles.shirt}><Image style={{width:130,height:130}} source={require("./assets/fashion/Tshirt.png")} /></View>)}
-        {27<day.temp.day && (<View style={styles.pants}><Image style={{width:130,height:130}} source={require("./assets/fashion/shorts.png")} /></View>)}
-        {27<day.temp.day && (<View style={styles.shoes}><Image style={{width:130,height:130}} source={require("./assets/fashion/sneakers.png")} /></View>)}
-      </View>
+        </View>
+        <View>
+        {4<day.temp.day && day.temp.day<=8 && (<View style={styles.outer}><Image style={{width:130,height:130}} source={require("./assets/fashion/coat.png")} /></View>)}
+        {4<day.temp.day && day.temp.day<=8 && (<View style={styles.shirt}><Image style={{width:130,height:130}} source={require("./assets/fashion/hood.png")} /></View>)}
+        {4<day.temp.day && day.temp.day<=8 && (<View style={styles.pants}><Image style={{width:130,height:130}} source={require("./assets/fashion/denim-pants.png")} /></View>)}
+        {4<day.temp.day && day.temp.day<=8 && (<View style={styles.shoes}><Image style={{width:130,height:130}} source={require("./assets/fashion/sneakers.png")} /></View>)}
+        </View>
+        <View>
+        {8<day.temp.day && day.temp.day<=11 && (<View style={styles.outer}><Image style={{width:130,height:130}} source={require("./assets/fashion/varsity.png")} /></View>)}
+        {8<day.temp.day && day.temp.day<=11 && (<View style={styles.shirt}><Image style={{width:130,height:130}} source={require("./assets/fashion/hood.png")} /></View>)}
+        {8<day.temp.day && day.temp.day<=11 && (<View style={styles.pants}><Image style={{width:130,height:130}} source={require("./assets/fashion/denim-pants.png")} /></View>) }
+        {8<day.temp.day && day.temp.day<=11 && (<View style={styles.shoes}><Image style={{width:130,height:130}} source={require("./assets/fashion/sneakers.png")} /></View>)}
+        </View>
+        <View>
+        {11<day.temp.day && day.temp.day<=16 && (<View style={styles.outer}><Image style={{width:130,height:130}} source={require("./assets/fashion/cardigan.png")} /></View>)}
+        {11<day.temp.day && day.temp.day<=16 && (<View style={styles.shirt}><Image style={{width:130,height:130}} source={require("./assets/fashion/Tshirt.png")} /></View>)}
+        {11<day.temp.day && day.temp.day<=16 && (<View style={styles.pants}><Image style={{width:130,height:130}} source={require("./assets/fashion/denim-pants.png")} /></View>)}
+        {11<day.temp.day && day.temp.day<=16 && (<View style={styles.shoes}><Image style={{width:130,height:130}} source={require("./assets/fashion/sneakers.png")} /></View>)}
+        </View>
+        <View>
+        {16<day.temp.day && day.temp.day<=19 && (<View style={styles.outer}><Image style={{width:130,height:130}} source={require("./assets/fashion/varsity.png")} /></View>)}
+        {16<day.temp.day && day.temp.day<=19 && (<View style={styles.shirt}><Image style={{width:130,height:130}} source={require("./assets/fashion/hood.png")} /></View>)}
+        {16<day.temp.day && day.temp.day<=19 && (<View style={styles.pants}><Image style={{width:130,height:130}} source={require("./assets/fashion/denim-pants.png")} /></View>)}
+        {16<day.temp.day && day.temp.day<=19 && (<View style={styles.shoes}><Image style={{width:130,height:130}} source={require("./assets/fashion/sneakers.png")} /></View>)}
+        </View>
+        <View>
+        {19<day.temp.day && day.temp.day<=22 && (<View style={styles.outer}><Image style={{width:130,height:130}} source={require("./assets/fashion/varsity.png")} /></View>)}
+        {19<day.temp.day && day.temp.day<=22 && (<View style={styles.shirt}><Image style={{width:130,height:130}} source={require("./assets/fashion/hood.png")} /></View>)}
+        {19<day.temp.day && day.temp.day<=22 && (<View style={styles.pants}><Image style={{width:130,height:130}} source={require("./assets/fashion/denim-pants.png")} /></View>)}
+        {19<day.temp.day && day.temp.day<=22 && (<View style={styles.shoes}><Image style={{width:130,height:130}} source={require("./assets/fashion/sneakers.png")} /></View>)}
+        </View>
+        <View>
+        {22<day.temp.day && day.temp.day<=27 && (<View style={styles.outer}><Image style={{width:130,height:130}} source={require("./assets/fashion/varsity.png")} /></View>)}
+        {22<day.temp.day && day.temp.day<=27 && (<View style={styles.shirt}><Image style={{width:130,height:130}} source={require("./assets/fashion/Tshirt.png")} /></View>)}
+        {22<day.temp.day && day.temp.day<=27 && (<View style={styles.pants}><Image style={{width:130,height:130}} source={require("./assets/fashion/denim-pants.png")} /></View>)}
+        {22<day.temp.day && day.temp.day<=27 && (<View style={styles.shoes}><Image style={{width:130,height:130}} source={require("./assets/fashion/sneakers.png")} /></View>)}
+        </View>
+        <View>
+        {27<day.temp.day && day.temp.day && (<View style={styles.outer}><Image style={{width:130,height:130}} source={require("./assets/fashion/varsity.png")} /></View>)}
+        {27<day.temp.day && day.temp.day && (<View style={styles.shirt}><Image style={{width:130,height:130}} source={require("./assets/fashion/Tshirt.png")} /></View>)}
+        {27<day.temp.day && day.temp.day && (<View style={styles.pants}><Image style={{width:130,height:130}} source={require("./assets/fashion/shorts.png")} /></View>)}
+        {27<day.temp.day && day.temp.day && (<View style={styles.shoes}><Image style={{width:130,height:130}} source={require("./assets/fashion/sneakers.png")} /></View>)}
+        </View>
+        </View>
 
       <View style={{}}>
       </View>
@@ -216,22 +225,22 @@ const styles = StyleSheet.create({
   },
   outer:{
     marginTop:40,
-    marginLeft:25,
+    marginLeft:30,
     alignItems:"baseline",
   },
   shirt:{
     marginTop:30,
-    marginRight:25,
+    marginRight:30,
     alignItems:"flex-end"
   },
   pants:{
     marginTop:30,
-    marginLeft:25,    
+    marginLeft:30,    
     alignItems:"baseline"
   },
   shoes:{
     marginTop:30,
-    marginRight:25,
+    marginRight:30,
     alignItems:"flex-end"
   }
 });
