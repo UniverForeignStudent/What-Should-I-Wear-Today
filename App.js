@@ -107,7 +107,6 @@ export default function App() {
       </View>         
       <View style={{width: SCREEN_WIDTH}}>
         <View  style={{alignItems:"center"}}><Text style={{fontSize:20}}>오늘의 날씨에 어울리는 옷은 이거에요!</Text></View>
-        
         <View style={{marginTop:20}}>
         {day.temp.day<=4 && (<View style={styles.outer}><Image style={{width:130,height:130}} source={require("./assets/fashion/padded-jacket.png")} /></View>)}
         {day.temp.day<=4 &&(<View style={styles.shirt}><Image style={{width:130,height:130}} source={require("./assets/fashion/hood.png")} /></View>)}
@@ -156,9 +155,9 @@ export default function App() {
         {27<day.temp.day && day.temp.day && (<View style={styles.pants}><Image style={{width:130,height:130}} source={require("./assets/fashion/shorts.png")} /></View>)}
         {27<day.temp.day && day.temp.day && (<View style={styles.shoes}><Image style={{width:130,height:130}} source={require("./assets/fashion/sneakers.png")} /></View>)}
         </View>
-        </View>
-
-      <View style={{}}>
+      </View>
+      <View style={{width: SCREEN_WIDTH}}>
+        
       </View>
       </ScrollView>
     </ImageBackground>
