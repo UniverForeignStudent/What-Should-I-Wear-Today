@@ -48,7 +48,7 @@ export default function App() {
     ...DefaultTheme,
     colors: {
       ...DefaultTheme.colors,
-      secondaryContainer: '#F2E29A',
+      secondaryContainer: '#87979A',
     },
   };
 
@@ -176,9 +176,55 @@ export default function App() {
         {value=="male" && 27<day.temp.day && day.temp.day && (<View style={styles.pants}><Image style={{width:130,height:130}} source={require("./assets/fashion/shorts.png")} /></View>)}
         {value=="male" && 27<day.temp.day && day.temp.day && (<View style={styles.shoes}><Image style={{width:130,height:130}} source={require("./assets/fashion/sneakers.png")} /></View>)}
         </View>
-      </View>
-      <View style={{width: SCREEN_WIDTH}}>
-        
+
+        <View>
+        {value=="female" && day.temp.day<=4 && (<View style={styles.outer}><Image style={{width:130,height:130}} source={require("./assets/fashion/padded-jacket.png")} /></View>)}
+        {value=="female" && day.temp.day<=4 &&(<View style={styles.shirt}><Image style={{width:130,height:130}} source={require("./assets/fashion/hood.png")} /></View>)}
+        {value=="female" && day.temp.day<=4 &&(<View style={styles.pants}><Image style={{width:130,height:130}} source={require("./assets/fashion/denim-pants.png")} /></View>)}
+        {value=="female" && day.temp.day<=4 &&(<View style={styles.shoes}><Image style={{width:130,height:130}} source={require("./assets/fashion/sneakers.png")} /></View>)}
+        </View>
+        <View>
+        {value=="female" && 4<day.temp.day && day.temp.day<=8 && (<View style={styles.outer}><Image style={{width:130,height:130}} source={require("./assets/fashion/coat.png")} /></View>)}
+        {value=="female" && 4<day.temp.day && day.temp.day<=8 && (<View style={styles.shirt}><Image style={{width:130,height:130}} source={require("./assets/fashion/sweater.png")} /></View>)}
+        {value=="female" && 4<day.temp.day && day.temp.day<=8 && (<View style={styles.pants}><Image style={{width:130,height:130}} source={require("./assets/fashion/denim-pants.png")} /></View>)}
+        {value=="female" && 4<day.temp.day && day.temp.day<=8 && (<View style={styles.shoes}><Image style={{width:130,height:130}} source={require("./assets/fashion/sneakers.png")} /></View>)}
+        </View>
+        <View>
+        {value=="female" && 8<day.temp.day && day.temp.day<=11 && (<View style={styles.outer}><Image style={{width:130,height:130}} source={require("./assets/fashion/ma-1.png")} /></View>)}
+        {value=="female" && 8<day.temp.day && day.temp.day<=11 && (<View style={styles.shirt}><Image style={{width:130,height:130}} source={require("./assets/fashion/sweater.png")} /></View>)}
+        {value=="female" && 8<day.temp.day && day.temp.day<=11 && (<View style={styles.pants}><Image style={{width:130,height:130}} source={require("./assets/fashion/denim-pants.png")} /></View>) }
+        {value=="female" && 8<day.temp.day && day.temp.day<=11 && (<View style={styles.shoes}><Image style={{width:130,height:130}} source={require("./assets/fashion/sneakers.png")} /></View>)}
+        </View>
+        <View>
+        {value=="female" && 11<day.temp.day && day.temp.day<=16 && (<View style={styles.outer}><Image style={{width:130,height:130}} source={require("./assets/fashion/blazer.png")} /></View>)}
+        {value=="female" && 11<day.temp.day && day.temp.day<=16 && (<View style={styles.shirt}><Image style={{width:130,height:130}} source={require("./assets/fashion/Tshirt.png")} /></View>)}
+        {value=="female" && 11<day.temp.day && day.temp.day<=16 && (<View style={styles.pants}><Image style={{width:130,height:130}} source={require("./assets/fashion/denim-pants.png")} /></View>)}
+        {value=="female" && 11<day.temp.day && day.temp.day<=16 && (<View style={styles.shoes}><Image style={{width:130,height:130}} source={require("./assets/fashion/sneakers.png")} /></View>)}
+        </View>
+        <View>
+        {value=="female" && 16<day.temp.day && day.temp.day<=19 && (<View style={styles.outer}><Image style={{width:130,height:130}} source={require("./assets/fashion/blazer.png")} /></View>)}
+        {value=="female" && 16<day.temp.day && day.temp.day<=19 && (<View style={styles.shirt}><Image style={{width:130,height:130}} source={require("./assets/fashion/onepiece.png")} /></View>)}
+        {value=="female" && 16<day.temp.day && day.temp.day<=19 && (<View style={styles.pants}><Image style={{width:130,height:130}} source={require("./assets/fashion/socks.png")} /></View>)}
+        {value=="female" && 16<day.temp.day && day.temp.day<=19 && (<View style={styles.shoes}><Image style={{width:130,height:130}} source={require("./assets/fashion/sneakers.png")} /></View>)}
+        </View>
+        <View>
+        {value=="female" && 19<day.temp.day && day.temp.day<=22 && (<View style={styles.outer}><Image style={{width:130,height:130}} source={require("./assets/fashion/cardigan.png")} /></View>)}
+        {value=="female" && 19<day.temp.day && day.temp.day<=22 && (<View style={styles.shirt}><Image style={{width:130,height:130}} source={require("./assets/fashion/Tshirt.png")} /></View>)}
+        {value=="female" && 19<day.temp.day && day.temp.day<=22 && (<View style={styles.pants}><Image style={{width:130,height:130}} source={require("./assets/fashion/slacks.png")} /></View>)}
+        {value=="female" && 19<day.temp.day && day.temp.day<=22 && (<View style={styles.shoes}><Image style={{width:130,height:130}} source={require("./assets/fashion/sneakers.png")} /></View>)}
+        </View>
+        <View>
+        {value=="female" && 22<day.temp.day && day.temp.day<=27 && (<View style={styles.outer}><Image style={{width:130,height:130}} source={require("./assets/fashion/cap.png")} /></View>)}
+        {value=="female" && 22<day.temp.day && day.temp.day<=27 && (<View style={styles.shirt}><Image style={{width:130,height:130}} source={require("./assets/fashion/Tshirt.png")} /></View>)}
+        {value=="female" && 22<day.temp.day && day.temp.day<=27 && (<View style={styles.pants}><Image style={{width:130,height:130}} source={require("./assets/fashion/long-skirt.png")} /></View>)}
+        {value=="female" && 22<day.temp.day && day.temp.day<=27 && (<View style={styles.shoes}><Image style={{width:130,height:130}} source={require("./assets/fashion/sneakers.png")} /></View>)}
+        </View>
+        <View>
+        {value=="female" && 27<day.temp.day && day.temp.day && (<View style={styles.outer}><Image style={{width:130,height:130}} source={require("./assets/fashion/sunglass.png")} /></View>)}
+        {value=="female" && 27<day.temp.day && day.temp.day && (<View style={styles.shirt}><Image style={{width:130,height:130}} source={require("./assets/fashion/Tshirt.png")} /></View>)}
+        {value=="female" && 27<day.temp.day && day.temp.day && (<View style={styles.pants}><Image style={{width:130,height:130}} source={require("./assets/fashion/short-skirt.png")} /></View>)}
+        {value=="female" && 27<day.temp.day && day.temp.day && (<View style={styles.shoes}><Image style={{width:130,height:130}} source={require("./assets/fashion/sneakers.png")} /></View>)}
+        </View>
       </View>
       </ScrollView>
     </ImageBackground>
