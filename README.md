@@ -20,4 +20,4 @@ API:https://openweathermap.org/
  
  또 빨래 알림기능을 추가하고 싶다.
 
- 기존에 사용하던 expocli가 아닌 Reactnative cli를 사용하여 재정비하거싶다
+ 기존에 사용하던 expocli가 아닌 Reactnative cli를 사용하여 재정비하고싶습니다.현업에서는 엑스퍼보다 리액트네이티브가 더 활발하다고 하여서
